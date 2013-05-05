@@ -80,3 +80,61 @@ A set of tipps &amp; tricks regarding experiments with a raspberry Pi
 	```
 	Edit ```sudo vim /etc/hosts``` and add hostname to first line after localhost
 	Edit ```sudo vim /etc/hostname``` edit hostname
+	
+	Edit ```sudo vim /etc/avahi/avahi-daemon.conf```
+	Change ```host-name=YOUR_HOST``` if prefered to be different from your hostname
+	
+	Edit ```dnsmasq.conf``` and add after last line:
+	```bash
+	domain=local
+	dhcp-range=192.168.42.10,192.168.42.10
+	dhcp-host=80:1f:02:87:7b:a7,192.168.42.1,pi
+	dhcp-option=3,192.168.42.10
+	dhcp-option=6,192.168.42.11,8.8.8.8,8.8.4.4,192.168.42.1
+	```
+	
+	Edit ```sudo vim /etc/network/interfaces```
+	```bash
+	auto lo
+	
+	iface lo inet loopback
+	iface eth0 inet dhcp
+	
+	allow-hotplug wlan0
+	iface wlan0 inet static
+	address 192.168.42.1
+	netmask 255.255.255.0
+	
+	#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+	#iface default inet dhcp
+	```
+	
+	Edit ```sudo vim /etc/hostapd/hostapd.conf```
+	```bash
+	# Basic configuration
+
+	interface=wlan0
+	ssid=wifi
+	channel=1
+	#bridge=br0
+
+	# Hardware configuration
+
+	driver=rtl871xdrv
+	ieee80211n=1
+	hw_mode=g
+	device_name=RTL8192CU
+	manufacturer=Realtek
+
+	# pimote settings
+	#country_code=DE
+	max_num_sta=2
+	wpa=2
+	#rsn_preauth=1
+	#rsn_preauth_interfaces=wlan0
+	wpa_key_mgmt=WPA-PSK
+	rsn_pairwise=CCMP
+	wpa_pairwise=CCMP
+	wpa_passphrase=balloon1
+	```
+
