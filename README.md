@@ -12,6 +12,26 @@ A set of tipps &amp; tricks regarding experiments with a raspberry Pi
 	192.168.42.1 pifi # wlan0
 	```
 
+* **Install Raspbian**
+
+	First determ your SD card
+	```bash
+	df -h
+	```
+	then unmount it
+	```bash
+	sudo diskutil unmount /dev/disk4s1
+	```
+	copy Raspbian to it
+	```bash
+	sudo dd bs=1m if=2013-02-09-wheezy-raspbian.img of=/dev/rdisk4
+	```
+	eject it
+	```bash
+	diskutil eject /dev/rdisk4
+	```
+	Hint: With ```ctrl + T``` you can see the current progress
+
 * **First Boot**
   ```sudo raspi-config```
   * update
@@ -24,9 +44,18 @@ A set of tipps &amp; tricks regarding experiments with a raspberry Pi
   
 
 * **Second Boot**
-  ```bash
-  sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get clean
-  ```
+  
+	Host: ```ssh pi@192.168.178.54```
+	Pi: ```mkdir ~/.ssh```
+	Host: ```scp ~/.ssh/id_rsa.pub pi@pi:/home/pi/.ssh/authorized_keys```
+	
+	From now on you can simply use ssh pi without being prompted for a password
+	
+	Now, let's update and install some basics:
+	```bash
+	sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get clean
+	```
+	```bash
 	sudo apt-get install -y vim
 	sudo apt-get install -y iw
 	sudo apt-get install -y screen
@@ -34,14 +63,9 @@ A set of tipps &amp; tricks regarding experiments with a raspberry Pi
 	sudo apt-get install -y htop
 	sudo apt-get install -y dnsmasq
 	sudo apt-get install -y tree
-	sudo apt-get install -y git-core
-	sudo apt-get install -y vim
-
-	mkdir ~/.ssh
-	execute from host
-	```bash
-	scp ~/.ssh/id_rsa.pub pi@pi:/home/pi/.ssh/authorized_keys
+	sudo apt-get install -y git-core	
 	```
+	
 
 * **Wireless USB Adapter**
   
@@ -54,3 +78,5 @@ A set of tipps &amp; tricks regarding experiments with a raspberry Pi
 	sudo make
 	sudo make install
 	```
+	Edit ```sudo vim /etc/hosts``` and add hostname to first line after localhost
+	Edit ```sudo vim /etc/hostname``` edit hostname
