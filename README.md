@@ -45,6 +45,8 @@ A set of tipps &amp; tricks regarding experiments with a raspberry Pi
 
 * **Second Boot**
   
+	Create rsa_pub Keys if not already done yet ```ssh-keygen -t rsa -C "yourname@yourdomain.ext"```
+	
 	Host: ```ssh pi@192.168.178.54```
 	Pi: ```mkdir ~/.ssh```
 	Host: ```scp ~/.ssh/id_rsa.pub pi@pi:/home/pi/.ssh/authorized_keys```
