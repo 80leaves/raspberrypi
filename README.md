@@ -51,6 +51,14 @@ A set of tipps &amp; tricks regarding experiments with a raspberry Pi
 	Pi: ```mkdir ~/.ssh```
 	Host: ```scp ~/.ssh/id_rsa.pub pi@pi:/home/pi/.ssh/authorized_keys```
 	
+	Now edit ```~/.ssh/config``` at your Host computer
+	```bash
+	HOST pi
+		HostName 192.168.178.54
+		Port 22
+		User pi
+	```
+	
 	From now on you can simply use ssh pi without being prompted for a password
 	
 	Now, let's update and install some basics:
