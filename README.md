@@ -16,13 +16,12 @@ and a
 #DEV Environment#
 
 I'm actually ssh-ing to my raspberryPi and doing all the main work on my developer machine in OSX. 
-To get some extra comfort I did following entries at my 
-    /etc/hosts
-	```bash
-	## pimote
-	192.168.178.54 pi # eth0
-	192.168.42.1 pifi # wlan0
-	```
+To get some extra comfort I did following entries at my ```/etc/hosts```
+```bash
+## pimote
+192.168.178.xxx pi # eth0
+192.168.42.1 pifi # wlan0
+```
 
 ##Install Raspbian##
 ###Download latest Raspian###
@@ -108,7 +107,7 @@ First make sure an existing hostapd is removed as we need to replace it by a mod
 ```bash
 sudo apt-get autoremove hostapd
 ```
-Now download and install a modified version. Thanks [segersjens]
+Now download and install a modified version. Thanks @[segersjens]
 ```bash
 wget https://github.com/segersjens/RTL8188-hostapd/archive/v1.0.tar.gz
 tar -zxvf v1.0.tar.gz
@@ -212,6 +211,12 @@ rsn_pairwise=CCMP
 wpa_pairwise=CCMP
 wpa_passphrase=balloon1
 ```
+You can check your connected devices by 
+```bash
+arp -n
+```
+
+
 [1]:http://www.amazon.de/EDIMAX-EW-7811UN-Wireless-Adapter-IEEE802-11b/dp/B003MTTJOY/ref=sr_1_1?s=computers&ie=UTF8&qid=1388835255&sr=1-1&keywords=edimax+ew-7811un
 [segersjens]:[http://jenssegers.be/blog/43/Realtek-RTL8188-based-access-point-on-Raspberry-Pi]
 [latest Raspbian image]:[http://downloads.raspberrypi.org/raspbian_latest]
