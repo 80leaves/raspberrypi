@@ -219,39 +219,39 @@ arp -n
 ##Install libgphoto2 & gphoto2##
 ! This is work in progress
 ```bash
-sudo apt-get install libusb-dev libusb-1.0-0-dev 
+sudo apt-get install -y libusb-dev libusb-1.0-0-dev 
 ```
 
 ```bash
-sudo apt-get install libexif-dev
+sudo apt-get install -y libexif-dev
 ```
 
 ```bash
-sudo apt-get install libpopt-dev
+sudo apt-get install -y libpopt-dev
 ```
 
 ```bash
-sudo apt-get install libfuse-dev
+sudo apt-get install -y libfuse-dev
 ```
 
 ```bash
-sudo apt-get install mono-devel
+sudo apt-get install -y mono-devel
 ```
 
 ```bash
-sudo apt-get install monodoc-base
+sudo apt-get install -y monodoc-base
 ```
 
 ```bash
-sudo apt-get install libmono-2.0.1
+sudo apt-get install -y libmono-2.0.1
 ```
 
 ```bash
-sudo apt-get install mono-gmcs
+sudo apt-get install -y mono-gmcs
 ```
 
 ```bash
-sudo apt-get install python-pyrex
+sudo apt-get install -y python-pyrex
 ```
 
 
