@@ -253,7 +253,9 @@ sudo apt-get install -y mono-gmcs
 ```bash
 sudo apt-get install -y python-pyrex
 ```
-
+```bash
+sudo apt-get install -y libtool
+```
 
 [1]:http://www.amazon.de/EDIMAX-EW-7811UN-Wireless-Adapter-IEEE802-11b/dp/B003MTTJOY/ref=sr_1_1?s=computers&ie=UTF8&qid=1388835255&sr=1-1&keywords=edimax+ew-7811un
 [segersjens]:[http://jenssegers.be/blog/43/Realtek-RTL8188-based-access-point-on-Raspberry-Pi]
