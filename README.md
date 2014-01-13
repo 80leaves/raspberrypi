@@ -216,6 +216,44 @@ You can check your connected devices by
 arp -n
 ```
 
+##Install libgphoto2 & gphoto2##
+! This is work in progress
+```bash
+sudo apt-get install libusb-dev libusb-1.0-0-dev 
+```
+
+```bash
+sudo apt-get install libexif-dev
+```
+
+```bash
+sudo apt-get install libpopt-dev
+```
+
+```bash
+sudo apt-get install libfuse-dev
+```
+
+```bash
+sudo apt-get install mono-devel
+```
+
+```bash
+sudo apt-get install monodoc-base
+```
+
+```bash
+sudo apt-get install libmono-2.0.1
+```
+
+```bash
+sudo apt-get install mono-gmcs
+```
+
+```bash
+sudo apt-get install python-pyrex
+```
+
 
 [1]:http://www.amazon.de/EDIMAX-EW-7811UN-Wireless-Adapter-IEEE802-11b/dp/B003MTTJOY/ref=sr_1_1?s=computers&ie=UTF8&qid=1388835255&sr=1-1&keywords=edimax+ew-7811un
 [segersjens]:[http://jenssegers.be/blog/43/Realtek-RTL8188-based-access-point-on-Raspberry-Pi]
