@@ -96,7 +96,7 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get clean
 ```
 and install some basics
 ```bash
-sudo apt-get install -y vim iw screen avahi-daemon htop dnsmasq tree git-core	
+sudo apt-get install -y vim iw screen avahi-daemon libavahi-compat-libdnssd-dev htop dnsmasq tree git-core	
 ```
 
 ###Wireless USB Adapter###
