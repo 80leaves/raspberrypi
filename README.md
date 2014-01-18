@@ -256,7 +256,34 @@ sudo apt-get install -y python-pyrex
 ```bash
 sudo apt-get install -y libtool
 ```
+Error:
+gphoto2: error while loading shared libraries: libgphoto2.so.6: cannot open shared object file: No such file or directory
+Problem:
+ldd /usr/local/bin/gphoto2
+	/usr/lib/arm-linux-gnueabihf/libcofi_rpi.so (0xb6f55000)
+	libgphoto2.so.6 => not found
+	libgphoto2_port.so.10 => not found
+	libltdl.so.7 => /usr/lib/arm-linux-gnueabihf/libltdl.so.7 (0xb6f3a000)
+	libdl.so.2 => /lib/arm-linux-gnueabihf/libdl.so.2 (0xb6f2f000)
+	libpthread.so.0 => /lib/arm-linux-gnueabihf/libpthread.so.0 (0xb6f10000)
+	libexif.so.12 => /usr/lib/arm-linux-gnueabihf/libexif.so.12 (0xb6ed4000)
+	libpopt.so.0 => /lib/arm-linux-gnueabihf/libpopt.so.0 (0xb6ec1000)
+	libm.so.6 => /lib/arm-linux-gnueabihf/libm.so.6 (0xb6e50000)
+	libc.so.6 => /lib/arm-linux-gnueabihf/libc.so.6 (0xb6d21000)
+	/lib/ld-linux-armhf.so.3 (0xb6f63000)
+	libgcc_s.so.1 => /lib/arm-linux-gnueabihf/libgcc_s.so.1 (0xb6cf8000)
+shows 'not found'
 
+Solution:
+
+```bash
+sudo vim /etc/ld.so.conf
+```
+```bash
+include /etc/ld.so.conf.d/*.conf
+/usr/local/lib
+```
+Link: http://lonesysadmin.net/2013/02/22/error-while-loading-shared-libraries-cannot-open-shared-object-file/
 [1]:http://www.amazon.de/EDIMAX-EW-7811UN-Wireless-Adapter-IEEE802-11b/dp/B003MTTJOY/ref=sr_1_1?s=computers&ie=UTF8&qid=1388835255&sr=1-1&keywords=edimax+ew-7811un
 [segersjens]:[http://jenssegers.be/blog/43/Realtek-RTL8188-based-access-point-on-Raspberry-Pi]
 [latest Raspbian image]:[http://downloads.raspberrypi.org/raspbian_latest]
