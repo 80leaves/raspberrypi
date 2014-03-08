@@ -129,6 +129,37 @@ Add your device to your list of trusted devices
 bluez-test-input connect AA:BB:CC:DD:EE:FF
 ```
 
+####Pair PS3 Controller####
+Install required Packages. (bluez-utils might be already)
+```bash
+sudo apt-get install bluez-utils bluez-compat bluez-hcidump checkinstall libusb-dev  libbluetooth-dev joystick
+```
+Download and compile ```sixpair```
+```bash
+wget http://www.pabr.org/sixlinux/sixpair.c
+gcc -o sixpair sixpair.c -lusb
+```
+Run sixpair
+```bash
+sudo ./sixpair
+```
+
+Install SixAxis Manager
+```bash
+wget http://sourceforge.net/projects/qtsixa/files/QtSixA%201.5.1/QtSixA-1.5.1-src.tar.gz
+tar xfvz QtSixA-1.5.1-src.tar.gz
+cd QtSixA-1.5.1/sixad
+make
+sudo mkdir -p /var/lib/sixad/profiles
+sudo checkinstall
+```
+
+Run sixad on boot time
+```bash
+sudo update-rc.d sixad defaults
+```
+
+
 
 
 
