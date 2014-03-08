@@ -12,6 +12,9 @@ and a
 
 [Edimax at Amazon.de] [1]
 
+> LogiLink BT0015 Class 1 Micro-Adapter (Bluetooth 4.0, USB 2.0, 100m) 
+
+[LogiLink at Amazon.de] [2]
 
 #DEV Environment#
 
@@ -98,6 +101,39 @@ and install some basics
 ```bash
 sudo apt-get install -y vim iw screen avahi-daemon libavahi-compat-libdnssd-dev htop dnsmasq tree git-core	
 ```
+###Bluetooth USB Adapter###
+LogiLink BT0015 Class 1 Micro-Adapter (Bluetooth 4.0, USB 2.0, 100m) 
+
+First install some required packages
+```bash
+sudo apt-get install bluetooth bluez-utils blueman
+```
+
+Make sure the USB bluetooth dongle is detected
+```bash
+lsusb
+```
+
+Scan for your device and note down your mac-address, in my case an Apple Bluetooth Keyboard and make sure its visible and not paired to anything else
+```bash
+hcitool scan
+```
+
+Initialize pairing, you need to enter a passcode ( 0000 ) which has to be typed in again on your keyboard
+```bash
+bluez-simple-agent hi0 AA:BB:CC:DD:EE:FF
+```
+
+Add your device to your list of trusted devices
+```bash
+bluez-test-input connect AA:BB:CC:DD:EE:FF
+```
+
+
+
+
+
+
 
 ###Wireless USB Adapter###
   
@@ -285,5 +321,6 @@ include /etc/ld.so.conf.d/*.conf
 ```
 Link: http://lonesysadmin.net/2013/02/22/error-while-loading-shared-libraries-cannot-open-shared-object-file/
 [1]:http://www.amazon.de/EDIMAX-EW-7811UN-Wireless-Adapter-IEEE802-11b/dp/B003MTTJOY/ref=sr_1_1?s=computers&ie=UTF8&qid=1388835255&sr=1-1&keywords=edimax+ew-7811un
+[2]:http://www.amazon.de/LogiLink-BT0015-Class-Micro-Adapter-Bluetooth/dp/B0096Y2HFW/ref=sr_1_1?s=computers&ie=UTF8&qid=1394310020&sr=1-1&keywords=logilink+bluetooth
 [segersjens]:[http://jenssegers.be/blog/43/Realtek-RTL8188-based-access-point-on-Raspberry-Pi]
 [latest Raspbian image]:[http://downloads.raspberrypi.org/raspbian_latest]
