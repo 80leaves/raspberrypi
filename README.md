@@ -106,7 +106,7 @@ LogiLink BT0015 Class 1 Micro-Adapter (Bluetooth 4.0, USB 2.0, 100m)
 
 First install some required packages
 ```bash
-sudo apt-get install bluetooth bluez-utils blueman
+sudo apt-get install -y bluetooth bluez-utils blueman
 ```
 
 Make sure the USB bluetooth dongle is detected
@@ -132,7 +132,7 @@ bluez-test-input connect AA:BB:CC:DD:EE:FF
 ####Pair PS3 Controller####
 Install required Packages. (bluez-utils might be already)
 ```bash
-sudo apt-get install bluez-utils bluez-compat bluez-hcidump checkinstall libusb-dev  libbluetooth-dev joystick
+sudo apt-get install -y bluez-utils bluez-compat bluez-hcidump checkinstall libusb-dev  libbluetooth-dev joystick
 ```
 Download and compile ```sixpair```
 ```bash
@@ -355,3 +355,9 @@ Link: http://lonesysadmin.net/2013/02/22/error-while-loading-shared-libraries-ca
 [2]:http://www.amazon.de/LogiLink-BT0015-Class-Micro-Adapter-Bluetooth/dp/B0096Y2HFW/ref=sr_1_1?s=computers&ie=UTF8&qid=1394310020&sr=1-1&keywords=logilink+bluetooth
 [segersjens]:[http://jenssegers.be/blog/43/Realtek-RTL8188-based-access-point-on-Raspberry-Pi]
 [latest Raspbian image]:[http://downloads.raspberrypi.org/raspbian_latest]
+
+#### iBeacon ####
+```bash
+sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
+```
+
