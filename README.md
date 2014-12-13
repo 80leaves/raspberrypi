@@ -360,4 +360,10 @@ Link: http://lonesysadmin.net/2013/02/22/error-while-loading-shared-libraries-ca
 ```bash
 sudo apt-get install -y libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
 ```
-
+```bash
+mkdir bluez
+cd bluez
+wget www.kernel.org/pub/linux/bluetooth/bluez-5.26.tar.xz
+unxz -c bluez-5.26.tar.xz | tar xv
+LDFLAGS=-lrt ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --enable-library -disable-systemd
+```
