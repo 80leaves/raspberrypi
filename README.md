@@ -176,9 +176,9 @@ sudo apt-get autoremove hostapd
 ```
 Now download and install a modified version. Thanks @[segersjens]
 ```bash
-wget https://github.com/segersjens/RTL8188-hostapd/archive/v1.0.tar.gz
-tar -zxvf v1.0.tar.gz
-cd RTL8188-hostapd-1.0/hostapd
+wget https://github.com/jenssegers/RTL8188-hostapd/archive/v2.0.zip
+unzip v2.0.zip
+cd RTL8188-hostapd-2.0/hostapd
 sudo make
 sudo make install
 ```
