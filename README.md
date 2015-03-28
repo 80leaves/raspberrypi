@@ -121,12 +121,12 @@ hcitool scan
 
 Initialize pairing, you need to enter a passcode ( 0000 ) which has to be typed in again on your keyboard
 ```bash
-bluez-simple-agent hi0 AA:BB:CC:DD:EE:FF
+sudo bluez-simple-agent hci0 AA:BB:CC:DD:EE:FF
 ```
 
 Add your device to your list of trusted devices
 ```bash
-bluez-test-input connect AA:BB:CC:DD:EE:FF
+sudo bluez-test-input connect AA:BB:CC:DD:EE:FF
 ```
 
 ####Pair PS3 Controller####
