@@ -80,7 +80,7 @@ mkdir ~/.ssh
 ```
 Host: 
 ```sh
-scp ~/.ssh/id_rsa.pub pi@pi:/home/pi/.ssh/authorized_keys
+cat ~/.ssh/id_rsa.pub | ssh USER@HOST "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 
 Now edit ```~/.ssh/config``` at your Host machine
